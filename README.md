@@ -1,93 +1,167 @@
-🏭 Project Overview
-This Streamlit dashboard provides real-time monitoring, predictive analytics, and optimization tools for shift performance in a manufacturing environment. It enables production managers and analysts to:
+# 🏭 Shift Performance Analytics Platform
 
-Track key performance indicators (KPIs)
+## 📌 Project Summary
 
-Analyze operator and machine efficiency
+This project delivers an end-to-end analytics solution for monitoring, analysing, and optimising manufacturing shift performance.
 
-Predict shift outcomes using machine learning
+The platform integrates SQL-based data extraction, KPI engineering, machine learning modelling, and an interactive Streamlit dashboard to support operational decision-making.
 
-Identify optimal configurations for improved productivity
+It enables production managers to:
 
-🚀 Features
-📊 Performance Dashboard
-Real-time KPIs: Units produced, defect count, downtime, efficiency score, and OEE
+- Monitor real-time shift KPIs  
+- Identify key performance drivers  
+- Predict shift efficiency outcomes  
+- Optimise workforce and machine configurations  
+- Estimate financial impact of efficiency improvements  
 
-Shift comparison charts and experience-performance analysis
+---
 
-Daily performance trend visualization
+## 🎯 Business Problem
 
-🎯 Shift Scoring Model
-Weighted scoring system based on production, quality, and availability
+Manufacturing environments often experience:
 
-Score distribution and component breakdown
+- Inconsistent shift productivity  
+- High machine downtime  
+- Limited visibility into operator performance  
+- No predictive insight for future shift outcomes  
 
-Top-performing shift identification
+This solution transforms raw operational data into actionable intelligence that supports data-driven production management.
 
-🔮 Predictive Analytics
-Predict efficiency score based on user-defined shift parameters
+---
 
-Performance category classification
+## 🧱 Data & Processing Pipeline
 
-Feature importance and model accuracy visualization
+**Data Source**
+- Relational database (SQLite simulation of production records)
+- Shift, operator, and machine-level logs
 
-⚙️ Optimization Engine
-Optimal shift configuration finder using ML model
+**Processing Steps**
+1. SQL-based data extraction  
+2. Data cleaning and validation  
+3. Feature engineering  
+4. KPI computation  
+5. Model training and evaluation  
+6. Dashboard deployment  
 
-Actionable recommendations based on performance gaps
+---
 
-ROI calculator for estimating financial impact of efficiency improvements
+## 📊 Key Performance Indicators (KPIs)
 
-🧰 Technology Stack
-Frontend: Streamlit
+The dashboard tracks and visualises:
 
-Data Processing: Pandas, NumPy
+- Units Produced  
+- Defect Count  
+- Downtime Percentage  
+- Efficiency Score  
+- Overall Equipment Effectiveness (OEE)  
+- Output per Hour  
 
-Visualization: Plotly (Express & Graph Objects)
+---
 
-Model Deployment: joblib (pickle serialization)
+## 🔍 Analytical Insights
 
-Backend: Python
+- Identified strong relationship between machine uptime and efficiency score  
+- Analysed operator experience vs productivity trends  
+- Quantified downtime impact on shift output  
+- Segmented high-performing vs underperforming shifts  
 
-Database: CSV (or SQL Server if integrated)
+---
 
-📂 File Structure
-Code
-├── app.py                      # Main Streamlit application
-├── v_shiftPerformance1.csv     # Shift performance dataset (optional)
-├── best_model.pkl              # Trained ML model (optional)
-├── README.pdf                  # Project documentation
-⚙️ Setup Instructions
+## 🤖 Machine Learning Model
+
+**Target Variable:**  
+Shift Efficiency Score
+
+**Models Tested:**
+- Linear Regression  
+- Random Forest  
+- Gradient Boosting (Selected Model)
+
+**Evaluation Metrics:**
+- R²  
+- Mean Absolute Error (MAE)
+
+The final model was serialized using joblib and integrated into the Streamlit application for live predictions.
+
+---
+
+## 🔮 Predictive & Optimisation Capabilities
+
+The platform allows users to:
+
+- Predict shift efficiency based on configurable inputs  
+- Classify performance category  
+- View feature importance  
+- Identify optimal shift configurations  
+- Estimate ROI from efficiency improvements  
+
+---
+
+## 📊 Streamlit Dashboard Features
+
+### Performance Monitoring
+- Real-time KPI summary  
+- Shift comparison visualisations  
+- Daily performance trend analysis  
+
+### Shift Scoring System
+- Weighted performance scoring  
+- Component-level breakdown  
+- Top-performing shift identification  
+
+### Predictive Analytics
+- Efficiency prediction engine  
+- Scenario simulation  
+- Model performance display  
+
+### Optimisation Engine
+- Recommended shift configuration  
+- Performance gap analysis  
+- Financial impact estimator  
+
+---
+
+## 🧰 Technology Stack
+
+- Python  
+- SQL (SQLite)  
+- Pandas & NumPy  
+- Scikit-learn  
+- Plotly  
+- Streamlit  
+- Joblib  
+
+---
+
+## ⚙️ Setup Instructions
+
 Install dependencies:
 
-bash
 pip install streamlit pandas numpy plotly scikit-learn joblib
-Run the app:
 
-bash
-streamlit run app.py
-Optional files:
+Run locally:
 
-Place v_shiftPerformance1.csv in the root directory for real data
+streamlit run app/streamlit_app.py
 
-Place best_model.pkl for predictive features
+Optional:
+- If no dataset is detected, synthetic data is generated for demonstration.
+- If no trained model is found, predictive features are disabled gracefully.
 
-📈 Model Details
-Algorithm: Gradient Boosting (100 estimators)
+---
 
-Preprocessing: OneHotEncoding for categorical variables
+## 📈 Business Value
 
-Validation: Train/test split with cross-validation
+This project demonstrates how analytics can:
 
-Deployment: Integrated into Streamlit for live predictions
+- Improve operational efficiency  
+- Support evidence-based scheduling decisions  
+- Reduce downtime impact  
+- Quantify financial gains from optimisation strategies  
 
-📌 Notes
-If no CSV is found, the app generates synthetic data for demonstration
+---
 
-If no model is found, predictive features are disabled with a warning
+## 👤 Author
 
-All filters and inputs are interactive via the sidebar and tabs
-
-👤 Author
-EFEMINI
-Data Scientist | Analytics & Optimization Specialist
+EFEMINI  
+MSc Data Science  
+Data Analyst | SQL • Python • KPI Analytics • Machine Learning
